@@ -1,1 +1,121 @@
-<p>travelroutes works!</p>
+<div class="global-container">
+    <div class="p-grid">
+        <div class="p-col-12">
+            <div class="p-col-12">
+                <app-title [data]="title"></app-title>
+            </div>
+        </div>
+    </div>
+    <div class="p-grid">
+        <div class="p-col-12">
+            <p-card header="Formulario de búsqueda"
+                [style]="{'width': '100%', 'margin-bottom': '2em', 'height': '235px', 'padding-right':'17px'}">
+
+
+                <form [formGroup]="routesForm">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <p class="spacinLabel">Fecha</p>
+                            <span>
+                                <p-calendar [showIcon]="true" inputId="icon"></p-calendar>
+                            </span>
+                        </div>
+                        <div class="col-md-3">
+                            <p class="spacinLabel">Tipo de vehiculo</p>
+                            <span>
+                                <p-dropdown placeholder="Seleccione tipo de vehiculo" optionLabel="name"
+                                    [showClear]="true"></p-dropdown>
+                            </span>
+                        </div>
+                        <div class="col-md-3">
+                            <p class="spacinLabel">Fecha</p>
+                            <span>
+                                <p-calendar [showIcon]="true" inputId="icon"></p-calendar>
+                            </span>
+                        </div>
+                        <div class="col-md-3">
+                            <p class="spacinLabel">Tipo de vehiculo</p>
+                            <span>
+                                <p-dropdown placeholder="Seleccione tipo de vehiculo" optionLabel="name"
+                                    [showClear]="true"></p-dropdown>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row" style="padding-top: 25px;float:right">
+
+                        <button pButton pRipple type="button" style="margin-right:10px; width : 110px"
+                            (click)="search()" label="Buscar" class="p-button-outlined p-button-secondary"><i
+                                class="pi pi-search" style="float: right;"></i></button>
+                        <button pButton pRipple type="button" label="Limpiar campos" (click)="clearForm()"
+                            class="p-button-outlined p-button-rounded p-button-success"></button>
+                    </div>
+                </form>
+            </p-card>
+        </div>
+    </div>
+    <div class="p-grid">
+        <div class="p-col-12">
+            <p-card>
+                <div class="p-grid">
+                    <div class="p-col-10">
+                        <h3>Resultados de la búsqueda</h3>
+                    </div>
+                    <div class="p-col-2">
+                    </div>
+                </div>
+                <p-table #dt [columns]="cols" [value]="routesData" [paginator]="true" [rows]="25"
+                    [globalFilterFields]="['departureDate','transportType','disponibility','arrival']"
+                    styleClass="p-datatable-striped p-datatable-sm">
+
+                    <ng-template pTemplate="caption">
+                        <div style="text-align: left">
+                            <div class="ui-inputgroup">
+                                <!-- <input type="text" pInputText size="50" placeholder="Buscar" id="iptSearch"
+                                    style="width:auto" (input)="applyFilterGlobal($event, 'contains')"> -->
+                                <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
+                                    placeholder="Filtro de búsqueda" />
+
+
+                                <button pButton type="button" icon="pi pi-search" class="ui-button-warn"
+                                    id="btnSearch"></button>
+                            </div>
+                        </div>
+                    </ng-template>
+
+                    <ng-template pTemplate="header" let-columns>
+                        <tr>
+                            <th *ngFor="let col of columns" [pSortableColumn]="col.field" pResizableColumn
+                                pReorderableColumn>
+                                <span class="table-position">
+                                    {{col.header}}
+                                </span>
+                                <p-sortIcon [field]="col.field"></p-sortIcon>
+                            </th>
+                            <th>Operaciones</th>
+                        </tr>
+                    </ng-template>
+
+
+                    <ng-template pTemplate="body" let-rowData>
+                        <tr [pSelectableRow]="rowData">
+                            <td>{{rowData.departureDate}}</td>
+                            <td>{{rowData.transportType}}</td>
+                            <td>{{rowData.disponibility}}</td>
+                            <td>{{rowData.arrival}}</td>
+
+                            <td>
+                                <p-button icon="pi pi-trash" name="btnDelete" styleClass="btn-table"
+                                    pTooltip="Eliminar aircrafta" tooltipPosition="top">
+                                </p-button>
+
+                                <p-button icon="pi pi-pencil" name="btnEdit" styleClass="btn-table"
+                                    pTooltip="Editar aircrafta" tooltipPosition="top">
+                                </p-button>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </p-card>
+        </div>
+    </div>
+</div>

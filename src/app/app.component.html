@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<!-- <mat-toolbar color="primary">
   <a class="title" href="/">{{ title }}</a>
 
   <div class="toolbar-spacer"></div>
@@ -10,6 +10,20 @@
 
 </mat-toolbar>
 <div class="container">
-  <!--This is to avoid reload during acquireTokenSilent() because of hidden iframe -->
+  
+  <router-outlet *ngIf="!isIframe"></router-outlet>
+</div> -->
+
+<p-menubar [model]="items">
+  
+  <ng-template pTemplate="start">
+    <img src="https://www.summa-sci.com/assets/img/logo.png" height="45" class="mr-2 ng-star-inserted">
+</ng-template>
+      
+      
+  
+</p-menubar>
+<div class="container">
+  
   <router-outlet *ngIf="!isIframe"></router-outlet>
 </div>

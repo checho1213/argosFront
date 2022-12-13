@@ -2,3 +2,75 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.p-menubar{
+    background-color: #557460 !important;
+    border: none !important;
+    border-radius: 0px !important;
+  }
+  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover{
+    background: #83a18d !important;
+  }
+  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-icon{
+    color: #ffff !important;
+  }
+  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-text{
+    color: #ffff !important;
+  }
+  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-submenu-icon{
+    color: #ffff !important;
+  }
+  .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link, .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link:not(.p-disabled):hover{
+    background: #83a18d !important;
+  }
+  .p-toolbar{
+    background-color: transparent !important;
+    border: none !important;
+  }
+  .h1Color {
+    color: #44604e !important;
+  }
+  .p-button {
+    background-color: #557460 !important ;
+    color: white !important;
+    border-radius: 0px !important;
+    border-color: #44604e !important;
+  }
+  .p-card{
+    border-radius: 0px !important;
+  }
+  .p-inputtext{
+    padding:0.35rem 0.35rem !important;
+    border: 1px solid gainsboro !important;
+    border-radius: 0px !important;
+  }
+  .p-inputtext:enabled:focus{
+    box-shadow : 0 0 0 0 !important; 
+    border: 1px solid #557460 !important;
+  }
+  .p-button{
+    padding:0.35rem 0.35rem !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+  }
+  .p-dropdown{
+    border-radius: 0px !important;
+  }
+  .p-dropdown:not(.p-disabled):hover{
+    border-color: #44604e !important;
+  }
+  .p-dropdown-panel{
+    border-radius: 0px !important;
+    border: 1px solid !important;
+  }
+  .spacinLabel{
+    margin-bottom: 1px !important;
+  }
+  .p-button .p-button-label{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important; 
+  }
+
+  .p-button.p-button-success.p-button-outlined, .p-buttonset.p-button-success > .p-button.p-button-outlined, .p-splitbutton.p-button-success > .p-button.p-button-outlined {
+    background-color: #ffff !important;
+    border: 2px solid #557460 !important;
+    color: #557460 !important;
+  }

@@ -1,0 +1,17 @@
+<div>
+    <p-toolbar [style]="{'padding': '0px'}">
+        <div class="ui-toolbar-group-left">
+            <div>
+                <h1 class="h1Color">{{data.primaryMessage}}</h1>
+            </div>
+            <div style="margin-top: -5px;">
+                <span style="color:gray">{{data.secondaryMessage}}</span>
+            </div>
+        </div>
+
+        <div class="ui-toolbar-group-right" *ngIf="data.isVisibleButton">
+            <button pButton type="button" class="ui-button"icon="pi pi-plus" style="margin-top: 18px;" label="{{data.textButton}}" (click)="eventClick($event)"></button>
+        </div>
+    </p-toolbar>
+</div>
+<br>
